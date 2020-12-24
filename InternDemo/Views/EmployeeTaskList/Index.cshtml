@@ -1,0 +1,115 @@
+﻿@model IEnumerable<InternDemo.Models.EmployeeTaskList>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_MainLayout.cshtml";
+}
+
+@*<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Employee)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TaskList)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Project)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Employee.fristName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TaskList.priority)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Project.name)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.employeeTaskListId">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.employeeTaskListId">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.employeeTaskListId">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>*@
+
+    <div class="content-wrapper">
+        <section class="content-header">
+            <div class="container-fluid">
+                <div class="row mb-2">
+                    <div class="col-sm-6">
+                        <h1>Employee task List</h1>
+                    </div>
+                    <div class="col-sm-6">
+                        <ol class="breadcrumb float-sm-right">
+                            <li class="breadcrumb-item"><a href="#">Home</a></li>
+
+                        </ol>
+                    </div>
+                </div>
+            </div><!-- /.container-fluid -->
+        </section>
+        <section class="content">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="card">
+                           
+                            <!-- /.card-header -->
+                            <div class="card-body">
+                                <table class="tablemanager">
+                                    <thead>
+                                        <tr>
+                                            <th>Employee Name</th>
+                                            <th>Project Name</th>
+                                            <th>Priority</th>
+                                            <th class="disableFilterBy">Action</th>
+
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        @foreach (var item in Model)
+                                        {
+                                            <tr>
+                                                <td>  @Html.DisplayFor(modelItem => item.Employee.FristName) @Html.DisplayFor(modelItem => item.Employee.MiddleName) @Html.DisplayFor(modelItem => item.Employee.LastName)</td>
+                                                <td>  @Html.DisplayFor(modelItem => item.Project.Name)</td>
+                                                <td>  @Html.DisplayFor(modelItem => item.TaskList.Priority)</td>
+                                                <td>
+                                                    <a asp-action="Edit" class="btn btn-success btn-sm rounded-0" asp-route-id="@item.EmployeeTaskListId">Edit</a> 
+                                                    <a asp-action="Delete" class="btn btn-danger btn-sm rounded-0" asp-route-id="@item.EmployeeTaskListId">Delete</a>
+                                                </td>
+
+                                            </tr>
+                                        }
+
+                                    </tbody>
+
+                                </table>
+                            </div>
+                            <!-- /.card-body -->
+                        </div>
+
+                        <!-- /.card -->
+                    </div>
+                    <!-- /.col -->
+                </div>
+                <a asp-action="Create" class="btn btn-block btn-default btn-lg">Create New</a>
+                <!-- /.row -->
+            </div>
+            <!-- /.container-fluid -->
+        </section>
+    </div>

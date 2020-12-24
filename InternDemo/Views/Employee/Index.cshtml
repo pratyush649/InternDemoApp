@@ -1,0 +1,171 @@
+﻿@model IEnumerable<InternDemo.Models.Employee>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_MainLayout.cshtml";
+}
+
+@*<h1>Index</h1>
+
+    <p>
+        <a asp-action="Create">Create New</a>
+    </p>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.FristName)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.MiddleName)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.LastName)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Email)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Password)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.DateOfBirth)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.DateOfJoin)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Gender)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Marital)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.JobPosition)
+                </th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.FristName)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.MiddleName)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.LastName)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Email)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Password)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.DateOfBirth)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.DateOfJoin)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Gender.Title)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Marital.Title)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.JobPosition.Grade)
+                    </td>
+                    <td>
+                        <a asp-action="Edit" asp-route-id="@item.EmployeeId">Edit</a> |
+                        <a asp-action="Details" asp-route-id="@item.EmployeeId">Details</a> |
+                        <a asp-action="Delete" asp-route-id="@item.EmployeeId">Delete</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>*@
+
+
+<div class="content-wrapper">
+    <section class="content-header">
+        <div class="container-fluid">
+            <div class="row mb-2">
+                <div class="col-sm-6">
+                    <h1>Employee Details</h1>
+                </div>
+                <div class="col-sm-6">
+                    <ol class="breadcrumb float-sm-right">
+                        <li class="breadcrumb-item"><a href="#">Home</a></li>
+
+                    </ol>
+                </div>
+            </div>
+        </div><!-- /.container-fluid -->
+    </section>
+    <section class="content">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-12">
+                    <div class="card">
+                       
+                        <!-- /.card-header -->
+                        <div class="card-body">
+                            <table class="tablemanager">
+                                <thead>
+
+                                    <tr>
+                                        <th>Fullname</th>
+                                        <th>Date of Birth</th>
+                                        <th>Date of Join</th>
+                                        <th>Email</th>
+                                        <th class="disableSort">Marital Status</th>
+                                        <th class="disableSort">Gender</th>
+                                        <th class="disableSort">Job Position</th>
+                                        <th class="disableFilterBy">Action</th>
+
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @foreach (var item in Model)
+                                    {
+                                    <tr>
+                                        <td>  @Html.DisplayFor(modelItem => item.FristName) @Html.DisplayFor(modelItem => item.MiddleName)  @Html.DisplayFor(modelItem => item.LastName)</td>
+                                        <td> @Html.DisplayFor(modelItem => item.DateOfBirth)</td>
+                                        <td> @Html.DisplayFor(modelItem => item.DateOfJoin)</td>
+                                        <td> @Html.DisplayFor(modelItem => item.ApplicationUsers.Email)</td>
+                                        <td> @Html.DisplayFor(modelItem => item.Marital.Title)</td>
+                                        <td> @Html.DisplayFor(modelItem => item.Gender.Title)</td>
+                                        <td> @Html.DisplayFor(modelItem => item.JobPosition.Position)</td>
+
+
+                                        <td>
+                                            <a asp-action="Edit" class="btn btn-success btn-sm rounded-0" asp-route-id="@item.EmployeeId">Edit</a>
+                                            <a asp-action="Delete" class="btn btn-danger btn-sm rounded-0" asp-route-id="@item.EmployeeId">Delete</a>
+                                        </td>
+
+                                    </tr>
+                                    }
+
+                                </tbody>
+
+
+                            </table>
+                        </div>
+                        <!-- /.card-body -->
+                    </div>
+
+                    <!-- /.card -->
+                </div>
+                <!-- /.col -->
+            </div>
+            <a asp-action="Create" class="btn btn-block btn-default btn-lg">Create New</a>
+            <!-- /.row -->
+        </div>
+        <!-- /.container-fluid -->
+    </section>
+</div>

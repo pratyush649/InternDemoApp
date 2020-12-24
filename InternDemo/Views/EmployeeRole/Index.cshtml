@@ -1,0 +1,117 @@
+﻿@model IEnumerable<InternDemo.Models.EmployeeRoles>
+
+@{
+     ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_MainLayout.cshtml";
+}
+
+@*<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+</head>
+<body>
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Employee)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.RoleTypes)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Employee.fristName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.RoleTypes.title)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.employeeRoleId">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.employeeRoleId">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.employeeRoleId">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
+</body>
+</html>*@
+
+    <div class="content-wrapper">
+        <section class="content-header">
+            <div class="container-fluid">
+                <div class="row mb-2">
+                    <div class="col-sm-6">
+                        <h1>Employee Role</h1>
+                    </div>
+                    <div class="col-sm-6">
+                        <ol class="breadcrumb float-sm-right">
+                            <li class="breadcrumb-item"><a href="#">Home</a></li>
+
+                        </ol>
+                    </div>
+                </div>
+            </div><!-- /.container-fluid -->
+        </section>
+        <section class="content">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="card">
+                          
+                            <!-- /.card-header -->
+                            <div class="card-body">
+                                <table class="tablemanager">
+                                    <thead>
+                                        <tr>
+
+                                            <th>Employee Name</th>
+                                            <th class="disableSort">Role Type</th>
+                                            <th class="disableFilterBy">Action</th>
+
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        @foreach (var item in Model)
+                                        {
+                                            <tr>
+                                                <td>  @Html.DisplayFor(modelItem => item.ApplicationUser.FirstName) @Html.DisplayFor(modelItem => item.ApplicationUser.MiddleName) @Html.DisplayFor(modelItem => item.ApplicationUser.LastName)</td>
+                                                <td>   @Html.DisplayFor(modelItem => item.RoleType.RoleName)</td>
+
+                                                <td>
+                                                    <a asp-action="Edit" class="btn btn-success btn-sm rounded-0" asp-route-id="@item.EmployeeRoleId">Edit</a>
+                                                    <a asp-action="Delete" class="btn btn-danger btn-sm rounded-0" asp-route-id="@item.EmployeeRoleId">Delete</a>
+                                                </td>
+
+                                            </tr>
+                                        }
+
+                                    </tbody>
+
+                                </table>
+                            </div>
+                            <!-- /.card-body -->
+                        </div>
+
+                        <!-- /.card -->
+                    </div>
+                    <!-- /.col -->
+                </div>
+                <a asp-action="Create" class="btn btn-block btn-default btn-lg">Create New</a>
+                <!-- /.row -->
+            </div>
+            <!-- /.container-fluid -->
+        </section>
+    </div>

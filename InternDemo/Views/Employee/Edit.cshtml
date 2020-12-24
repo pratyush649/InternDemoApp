@@ -1,0 +1,171 @@
+﻿@model InternDemo.Models.Employee
+
+@{
+    ViewData["Title"] = "Edit";
+   Layout = "~/Views/Shared/_MainLayout.cshtml";
+}
+
+@*<h1>Edit</h1>
+
+<h4>Employee</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="EmployeeId" />
+            <div class="form-group">
+                <label asp-for="FristName" class="control-label"></label>
+                <input asp-for="FristName" class="form-control" />
+                <span asp-validation-for="FristName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="MiddleName" class="control-label"></label>
+                <input asp-for="MiddleName" class="form-control" />
+                <span asp-validation-for="MiddleName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="LastName" class="control-label"></label>
+                <input asp-for="LastName" class="form-control" />
+                <span asp-validation-for="LastName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Email" class="control-label"></label>
+                <input asp-for="Email" class="form-control" />
+                <span asp-validation-for="Email" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Password" class="control-label"></label>
+                <input asp-for="Password" class="form-control" />
+                <span asp-validation-for="Password" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="DateOfBirth" class="control-label"></label>
+                <input asp-for="DateOfBirth" class="form-control" />
+                <span asp-validation-for="DateOfBirth" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="DateOfJoin" class="control-label"></label>
+                <input asp-for="DateOfJoin" class="form-control" />
+                <span asp-validation-for="DateOfJoin" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="GenderId" class="control-label"></label>
+                <select asp-for="GenderId" class="form-control" asp-items="ViewBag.GenderId"></select>
+                <span asp-validation-for="GenderId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="MaritalId" class="control-label"></label>
+                <select asp-for="MaritalId" class="form-control" asp-items="ViewBag.MaritalId"></select>
+                <span asp-validation-for="MaritalId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="JobPositionId" class="control-label"></label>
+                <select asp-for="JobPositionId" class="form-control" asp-items="ViewBag.JobPositionId"></select>
+                <span asp-validation-for="JobPositionId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>*@
+
+
+<div class="content-wrapper">
+    <section class="content-header">
+        <div class="container-fluid">
+            <div class="row mb-2">
+                <div class="col-sm-6">
+                    <h1>Employee Contact Form</h1>
+                </div>
+                <div class="col-sm-6">
+                    <ol class="breadcrumb float-sm-right">
+                        <li class="breadcrumb-item"><a href="#">Home</a></li>
+
+                    </ol>
+                </div>
+            </div>
+        </div><!-- /.container-fluid -->
+    </section>
+    <div class="card-body">
+        <form asp-action="Edit">
+            <div class="row">
+                <input type="hidden" asp-for="EmployeeId" />
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label asp-for="FristName" class="control-label"></label>
+                        <input asp-for="FristName" class="form-control" />
+                        <span asp-validation-for="FristName" class="text-danger"></span>
+
+                    </div>
+                    <!-- /.form-group -->
+                    <div class="form-group">
+                        <label asp-for="MiddleName" class="control-label"></label>
+                        <input asp-for="MiddleName" class="form-control" />
+                        <span asp-validation-for="MiddleName" class="text-danger"></span>
+
+                    </div>
+                    <div class="form-group">
+
+                        <label asp-for="LastName" class="control-label"></label>
+                        <input asp-for="LastName" class="form-control" />
+                        <span asp-validation-for="LastName" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="GenderId" class="control-label"></label>
+                        <select asp-for="GenderId" class="form-control" asp-items="ViewBag.GenderId"><option style="display:none"> -- select an option -- </option></select>
+                    </div>
+
+
+
+                </div>
+                <div class="col-md-6">
+
+                   
+                    <div class="form-group">
+                        <label asp-for="DateOfBirth" class="control-label"></label>
+                        <input asp-for="DateOfBirth" class="form-control"/>
+                        <span asp-validation-for="DateOfBirth" class="text-danger"></span>
+
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="DateOfJoin" class="control-label"></label>
+                        <input asp-for="DateOfJoin" class="form-control" />
+                        <span asp-validation-for="DateOfJoin" class="text-danger"></span>
+
+                    </div>
+
+                    <div class="form-group">
+                        <label asp-for="MaritalId" class="control-label"></label>
+                        <select asp-for="MaritalId" class="form-control" asp-items="ViewBag.MaritalId"><option style="display:none"> -- select an option -- </option></select>
+
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="JobPositionId" class="control-label"></label>
+                        <select asp-for="JobPositionId" class="form-control" asp-items="ViewBag.JobPositionId"><option style="display:none"> -- select an option -- </option></select>
+
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="Id" class="control-label"></label>
+                        <select asp-for="Id" class="form-control" asp-items="ViewBag.Id"><option style="display:none"> -- select an option -- </option></select>
+                    </div>
+
+
+                </div>
+
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+            <div>
+                <a asp-action="Index">Back to List</a>
+            </div>
+        </form>
+        <!-- /.row -->
+    </div>
+</div>

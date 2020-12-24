@@ -1,0 +1,99 @@
+﻿@model InternDemo.Models.EmployeeTaskList
+
+@{
+    ViewData["Title"] = "Edit";
+    Layout = "~/Views/Shared/_MainLayout.cshtml";
+}
+
+@*<h1>Edit</h1>
+
+<h4>EmployeeTaskList</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="employeeTaskListId" />
+            <div class="form-group">
+                <label asp-for="EmployeeId" class="control-label"></label>
+                <select asp-for="EmployeeId" class="form-control" asp-items="ViewBag.EmployeeId"></select>
+                <span asp-validation-for="EmployeeId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TaskListId" class="control-label"></label>
+                <select asp-for="TaskListId" class="form-control" asp-items="ViewBag.TaskListId"></select>
+                <span asp-validation-for="TaskListId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ProjectId" class="control-label"></label>
+                <select asp-for="ProjectId" class="form-control" asp-items="ViewBag.ProjectId"></select>
+                <span asp-validation-for="ProjectId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>*@
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
+
+<div class="content-wrapper">
+    <section class="content-header">
+        <div class="container-fluid">
+            <div class="row mb-2">
+                <div class="col-sm-6">
+                    <h1>Employee task List</h1>
+                </div>
+                <div class="col-sm-6">
+                    <ol class="breadcrumb float-sm-right">
+                        <li class="breadcrumb-item"><a href="#">Home</a></li>
+
+                    </ol>
+                </div>
+            </div>
+        </div><!-- /.container-fluid -->
+    </section>
+    <div class="card-body">
+        <form asp-action="Edit">
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <input type="hidden" asp-for="EmployeeTaskListId" />
+                        <label asp-for="EmployeeId" class="control-label">Employee Name</label>
+                        <select asp-for="EmployeeId" class="form-control" asp-items="ViewBag.EmployeeId"><option style="display:none"> -- select an option -- </option></select>
+
+                    </div>
+                    <!-- /.form-group -->
+                    <div class="form-group">
+                        <label asp-for="TaskListId" class="control-label">Task List</label>
+                        <select asp-for="TaskListId" class="form-control" asp-items="ViewBag.TaskListId"><option style="display:none"> -- select an option -- </option></select>
+
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="ProjectId" class="control-label">Projects</label>
+                        <select asp-for="ProjectId" class="form-control" asp-items="ViewBag.ProjectId"><option style="display:none"> -- select an option -- </option></select>
+
+                    </div>
+                    <!-- /.form-group -->
+                </div>
+
+            </div>
+
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+            <div>
+                <a asp-action="Index">Back to List</a>
+            </div>
+        </form>
+        <!-- /.row -->
+    </div>
+
+</div>

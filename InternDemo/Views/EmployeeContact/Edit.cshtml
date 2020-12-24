@@ -1,0 +1,101 @@
+﻿@model InternDemo.Models.EmployeeContacts
+
+@{
+    ViewData["Title"] = "Edit";
+    Layout = "~/Views/Shared/_MainLayout.cshtml";
+}
+
+@*<h1>Edit</h1>
+
+<h4>EmployeeContacts</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="contactId" />
+            <div class="form-group">
+                <label asp-for="mobileNumber" class="control-label"></label>
+                <input asp-for="mobileNumber" class="form-control" />
+                <span asp-validation-for="mobileNumber" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="residentNo" class="control-label"></label>
+                <input asp-for="residentNo" class="form-control" />
+                <span asp-validation-for="residentNo" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="EmployeeId" class="control-label"></label>
+                <select asp-for="EmployeeId" class="form-control" asp-items="ViewBag.EmployeeId"></select>
+                <span asp-validation-for="EmployeeId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>*@
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
+
+
+<h4>Employee Address</h4>
+<div class="content-wrapper">
+    <section class="content-header">
+        <div class="container-fluid">
+            <div class="row mb-2">
+                <div class="col-sm-6">
+                    <h1>Employee Contacts</h1>
+                </div>
+                <div class="col-sm-6">
+                    <ol class="breadcrumb float-sm-right">
+                        <li class="breadcrumb-item"><a href="#">Home</a></li>
+
+                    </ol>
+                </div>
+            </div>
+        </div><!-- /.container-fluid -->
+    </section>
+    <div class="card-body">
+        <form asp-action="Edit">
+            <div class="row">
+                <div class="col-md-6">
+                    <input type="hidden" asp-for="ContactId" />
+                    <div class="form-group">
+                        <label asp-for="EmployeeId" class="control-label">Employee Name</label>
+                        <select asp-for="EmployeeId" class="form-control" asp-items="ViewBag.EmployeeId"><option style="display:none"> -- select an option -- </option></select>
+                        <span asp-validation-for="EmployeeId" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="MobileNumber" class="control-label">Mobile Number</label>
+                        <input asp-for="MobileNumber" class="form-control" />
+                        <span asp-validation-for="MobileNumber" class="text-danger"></span>
+
+                    </div>
+                    <!-- /.form-group -->
+                    <div class="form-group">
+                        <label asp-for="ResidentNo" class="control-label">Resident Number</label>
+                        <input asp-for="ResidentNo" class="form-control" />
+                        <span asp-validation-for="ResidentNo" class="text-danger"></span>
+
+                    </div>
+
+                </div>
+
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+            <div>
+                <a asp-action="Index">Back to List</a>
+            </div>
+        </form>
+        <!-- /.row -->
+    </div>
+</div>
